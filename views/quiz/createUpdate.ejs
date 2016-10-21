@@ -1,13 +1,10 @@
-<html>
-    <head>
+<%- include('../layouts/applicationHeader'); %>
 
-    </head>
-    <body>
-        <h1> Quiz Form </h1>
-        <form method="POST" action="/quizzes/new">
-        <input type="text" placeholder="Question" name="question"></input>
-        <input type="text" placeholder="Answer" name="answer"></input>
-        <input type="submit"></input>
-        </form>
-    </body>
-</html>
+<h1> Quiz Form </h1>
+<form method="POST" action="/quizzes/new">
+    <input type="text" placeholder="Question" name="question"></input>
+    <input type="text" placeholder="Answer" name="answer"></input>
+    <input type="submit"></input>
+</form>
+
+<%- include('../layouts/applicationFooter'); %>

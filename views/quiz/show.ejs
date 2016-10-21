@@ -1,13 +1,9 @@
-<html>
-    <head>
-    </head>
-    <body>
-        <a href="/logout">Logout</a>
-        <a href="/quizzes">Home</a>
-        <%=foundQuiz.id%>
-        <br>
-        <%=foundQuiz.question%>
-        <br>
-        <%=foundQuiz.answer%>
-    </body>
-</html>
+<%- include('../layouts/applicationHeader'); %>
+
+<a href="/logout">Logout</a>
+<a href="/quizzes">Home</a>
+<%=foundQuiz.question%>
+<br>
+<%=foundQuiz.answer%>
+
+<%- include('../layouts/applicationFooter'); %>

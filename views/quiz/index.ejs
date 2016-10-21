@@ -3,7 +3,13 @@
 
     </head>
     <body>
-        <%= quizzes %>
+        <a href="/logout">Logout</a>
+        <a href="/quizzes/new">Create Quiz</a>
+        <% quizzes.forEach(function(quiz){ %>
+        <p>
+        <a href="/quizzes/<%=quiz.id%>">Question: <%=quiz.question %></a>
+        </p>
+        <%} ) %>
     </body>
 </html>
 

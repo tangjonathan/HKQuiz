@@ -1,10 +1,12 @@
 <%- include('../layouts/applicationHeader'); %>
-
-<h1> Quiz Form </h1>
-<form method="POST" action="/quizzes/new">
-    <input type="text" placeholder="Question" name="question"></input>
-    <input type="text" placeholder="Answer" name="answer"></input>
-    <input type="submit"></input>
-</form>
-
+<div class="row row-centered">
+    <div class='col-md-6 col-md-offset-3' style="text-align:center;">
+        <h1> Quiz Form </h1>
+        <form method="POST" action="/quizzes/new">
+            <input type="text" placeholder="Question" name="question" size="35"></input><br><br>
+            <input type="text" placeholder="Answer" name="answer" size="35"></input><br><br>
+            <input type="submit"></input>
+        </form>
+    </div>
+</div>
 <%- include('../layouts/applicationFooter'); %>

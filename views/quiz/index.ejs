@@ -1,11 +1,13 @@
 <%- include('../layouts/applicationHeader'); %>
-
-<a href="/logout">Logout</a>
-<a href="/quizzes/new">Create Quiz</a>
-<% quizzes.forEach(function(quiz){ %>
-    <p>
-        <a href="/quizzes/<%=quiz.id%>">Question: <%= quiz.question %></a>
-    </p>
-<% }); %>
-
+<div class="row">
+    <div class='col-md-4 col-md-offset-4'>
+        <center><h1>QUESTIONS</h1></center><br>
+            <% quizzes.forEach(function(quiz){ %>
+                <p>
+                    <a href="/quizzes/<%=quiz.id%>">Question: <%= quiz.question %></a>
+                </p>
+            <% }); %>
+        </div>
+    </div>
+</div>
 <%- include('../layouts/applicationFooter'); %>

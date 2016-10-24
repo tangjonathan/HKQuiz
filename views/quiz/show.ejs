@@ -1,9 +1,10 @@
 <%- include('../layouts/applicationHeader'); %>
-
-<a href="/logout">Logout</a>
-<a href="/quizzes">Home</a>
-<%=foundQuiz.question%>
-<br>
-<%=foundQuiz.answer%>
+<div class="row">
+    <div class='col-md-6 col-md-offset-3'>
+        <%=foundQuiz.question%>
+        <br>
+        <%=foundQuiz.answer%>
+    </div>
+</div>
 
 <%- include('../layouts/applicationFooter'); %>

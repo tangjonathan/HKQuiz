@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var quizSchema = new Schema({
     question: String,
     answer: String,
-    creationUserId: String
+    UserId: String
 });
 
 

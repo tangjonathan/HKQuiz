@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
     username: String,
     password: String,
+    points: Number
 });
 
 userSchema.methods.generateHash = function(password){

@@ -1,6 +1,5 @@
 var Quiz = require('../models/quiz');
 var bodyParser = require('body-parser');
-var pry = require('pryjs');
 
 module.exports = function(app)
 {
@@ -9,7 +8,6 @@ module.exports = function(app)
     app.use(bodyParser.urlencoded({ extended:true }));
 
     app.get('/quizzes', function(req, res){
-
         Quiz.find({}, function(err, quizzes){
             if (err) throw err;
 
@@ -52,7 +50,7 @@ module.exports = function(app)
     });
 
     app.get('/quizzes/:id', function(req, res){
-
+        
         Quiz.findById(req.params.id, function(err, foundQuiz){
             if (err) throw err;
             
@@ -62,17 +60,22 @@ module.exports = function(app)
     });
 
     app.post('/quizzes/:id', function(req, res){
-
+        var quiz = {}
+        var
+        req.user.id
         Quiz.findById(req.params.id, function(err, foundQuiz){
-            if (req.body.answer === foundQuiz.answer) {
-                User.findByIdandUpdate(foundQuiz.userId,{$inc: {points:1}}, function(err, foundUser) {
-                    if (err) throw err;
-                        console.log(foundUser.points)
-                    res.redirect('/quizzes')
-                })
-            }
+            var quiz = foundQuiz
             res.redirect('/quizzes')
         })
+        
 
     }); //end of route
 }
+
+            // if (req.body.answer === foundQuiz.answer) {
+            //     User.findByIdandUpdate(foundQuiz.userId,{$inc: {points:1}}, function(err, foundUser) {
+            //         if (err) throw err;
+            //             console.log(foundUser.points)
+            //         res.redirect('/quizzes')
+            //     })
+            // }

@@ -8,7 +8,6 @@ module.exports = function(app)
     app.use(bodyParser.urlencoded({ extended:true }));
 
     app.get('/quizzes', function(req, res){
-
         Quiz.find({}, function(err, quizzes){
             if (err) throw err;
 
@@ -37,7 +36,7 @@ module.exports = function(app)
         }
         else{
             var newQuiz = Quiz({
-                question :req.body.question,
+                question: req.body.question,
                 answer: req.body.answer
             });
             
@@ -51,13 +50,32 @@ module.exports = function(app)
     });
 
     app.get('/quizzes/:id', function(req, res){
-
-        Quiz.findById( req.params.id, function(err, foundQuiz){
+        
+        Quiz.findById(req.params.id, function(err, foundQuiz){
             if (err) throw err;
             
-            console.log(foundQuiz.id);
             res.render('quiz/show', {foundQuiz: foundQuiz});
         });
 
     });
+
+    app.post('/quizzes/:id', function(req, res){
+        var quiz = {}
+        var
+        req.user.id
+        Quiz.findById(req.params.id, function(err, foundQuiz){
+            var quiz = foundQuiz
+            res.redirect('/quizzes')
+        })
+        
+
+    }); //end of route
 }
+
+            // if (req.body.answer === foundQuiz.answer) {
+            //     User.findByIdandUpdate(foundQuiz.userId,{$inc: {points:1}}, function(err, foundUser) {
+            //         if (err) throw err;
+            //             console.log(foundUser.points)
+            //         res.redirect('/quizzes')
+            //     })
+            // }

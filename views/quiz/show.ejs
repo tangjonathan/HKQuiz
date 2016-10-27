@@ -1,9 +1,11 @@
 <%- include('../layouts/applicationHeader'); %>
 <div class="row">
     <div class='col-md-6 col-md-offset-3'>
-        <%=foundQuiz.question%>
-        <br>
-        <%=foundQuiz.answer%>
+        <%= foundQuiz.question %>
+        <form action="/quizzes/<%= foundQuiz.id %>" method="POST">
+            <input type="text" name="answer" placeholder="Answer"></input>
+            <input type="submit" value="Submit"></input>
+        </form>
     </div>
 </div>
 
